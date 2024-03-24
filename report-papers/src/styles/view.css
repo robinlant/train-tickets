@@ -1,0 +1,9 @@
+/* only this file should be used to configure view elements */
+
+.view a {
+    color:orange;
+}
+
+.view img {
+    height:auto;
+}

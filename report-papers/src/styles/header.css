@@ -1,0 +1,72 @@
+header .info {
+    display: flex;
+    flex-direction: row;;
+    align-content:center;
+    justify-content:start;
+    height: 80px;
+    flex-wrap:nowrap;
+    padding:5px;
+}
+
+header h1{
+    font-size:24px;
+}
+
+header .info-img {
+    background-color: brown;
+    flex:1,1,auto;
+    height:80px;
+}
+
+header img {
+    width: auto; 
+    height: 80px; 
+    object-fit: cover;
+}
+
+header .info-node {
+    padding-left: 20px; 
+    flex:1,1,800px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+header .buttons{
+    margin-top:5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-content: center;
+    
+}
+
+header .btn{
+    background-color:rgb(52, 49, 49);
+    color:lightgrey;
+    padding: 7px 12px;
+    border-radius:15px;
+    transition-duration: 0.1s;
+}
+
+header .finish:hover{
+    background-color:darkred;
+    color: orange;
+    transition-duration: 0.1s;
+    box-shadow: 0px 3px 3px black;
+}
+
+header .finish{
+    background-color:brown;
+    color:orange;
+    transition-duration: 0.1s;
+}
+
+header .clicked{
+    background-color: darkgreen;
+    color: orange;
+    
+    box-shadow: 0px 1px 1px black;
+}
