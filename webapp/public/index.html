@@ -2,65 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Train Tickets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/footer.css"
 </head>
 <body>
     <header>
         <h1>Train Tickets</h1>
-        <div class="nav-links">
-            <div>Login</div>
-            <div>Sign Up</div>
-            <div>Cart</div>
-            <div><img src="images/menu.svg"></div>
+        <div class="btns">
+            <div class="disappearable-768px" id="btn-cart">Cart</div>
+            <div class="disappearable-768px" id="btn-login">Login</div>
+            <div class="disappearable-768px" id="btn-register">Sign Up</div>
+            <div id="btn-menu"><img src="images/menu.svg"></div>
         </div>
     </header>
 
     <main>
-        <div class="section">
-            <h2>Very trusted and very real company for buying and comparing train tickets in Europe</h2>
+        <div id="section-1" class="section">
+            <div class="h2-container">
+                <h2>Very trusted and very real company for buying and comparing train tickets in Europe</h2>
+            </div>
+            <div class="form-container">
             <form>
-                <label for="from">From</label>
-                <input type="text" id="from" placeholder="City or destination">
+                <div class="first-1">
+                    <label for="from">From</label>
+                    <input type="text" id="from" placeholder="City or destination">
+                </div>
+                <div class="first-1">
+                    <label for="to">To</label>
+                    <input type="text" id="to" placeholder="City or destination">
+                </div>
+                <div class="first-1">
+                    <label for="date">Date</label>
+                    <input type="date" id="date">
+                </div>
                 
-                <label for="to">To</label>
-                <input type="text" id="to" placeholder="City or destination">
-                
-                <label for="date">Date</label>
-                <input type="date" id="date">
-                
-                <button type="submit">Search</button>
+                <div class="button-wrap"><button type="submit">Search</button></div>
             </form>
         </div>
-
-        <div class="section">
-            <h2>About Train Tickets</h2>
-            <p>Embarking on a journey across the breathtaking landscapes of Europe, Fantasia Express Tickets emerges not just as a purveyor of passages but as the very gateway to adventure. Nestled in the heart of Narnia, at the whimsical address of 3rd floor, Edge of Nowhere, our essence weaves through the fabric of reality and fantasy. Unlike any, our foundation in Narnia empowers us with the unique ability to offer tickets to dreams and destinations alike...</p>
         </div>
-        <div class="section">
-            <table>
-                <caption>Age table</caption>
-                <tr>
-                    <th>Youth</th>
-                    <th>Adult</th>
-                    <th>Senior</th>
-                </tr>
-                <tr>
-                    <td>0 - 25</td>
-                    <td>26 - 59</td>
-                    <td>60 +</td>
-                </tr>
-            </table>
 
-            <div>
-                <h3>Bonuses for seniors</h3>
+        <div id="section-2" class="section">
+            <h2>About Train Tickets</h2>
+            <p>Embarking on a journey across the breathtaking landscapes of Europe, Fantasia Express Tickets emerges not just as a purveyor of passages but as the very gateway to adventure. Nestled in the heart of Narnia, at the whimsical address of 3rd floor, Edge of Nowhere, our essence weaves through the fabric of reality and fantasy. Unlike any, our foundation in Narnia empowers us with the unique ability to offer tickets to dreams and destinations alike.
+                At Fantasia Express Tickets, we don't merely sell tickets; we curate pathways to the soul of Europe. Our offerings are more than a transaction—they are an invitation to traverse the vast, enchanting expanses of a continent rich with history, culture, and unparalleled beauty. Our selection caters to all, from the youthful wanderer yearning for discovery to the seasoned traveler seeking solace in Europe's serene landscapes, with special courtesies extended to our senior adventurers.
+                Why choose Fantasia Express Tickets? The answer is woven into the tapestry of trust, reliability, and genuine care we extend to each traveler. With us, you're not just buying a ticket; you're unlocking a journey steeped in wonder, guided by a company as real as the magical lands of Narnia we call home. Fantasia Express Tickets—where every ticket is a promise of adventure.</p>
+        </div>
+
+        <div id="section-3" class="section">
+            <div class="age-table-container">
+                <h2>Age table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Youth</th>
+                            <th>Adult</th>
+                            <th>Senior</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0 - 25</td>
+                            <td>26 - 59</td>
+                            <td>60 +</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonuses-list-container">
+                <h2>Bonuses for seniors</h2>
                 <ul>
                     <li>20% off on long trains</li>
                     <li>15% off on short trains</li>
                     <li>Free cup of tea</li>
                 </ul>
             </div>
-            <div>
-                <h3>Why we?</h3>
+        
+            <div class="why-we-list-container">
+                <h2>Why we?</h2>
                 <ol>
                     <li>We are real</li>
                     <li>We are trusted</li>
@@ -68,9 +94,15 @@
                 </ol>
             </div>
         </div>
+        
     </main>
     <footer>
-        <div>Copyright &copy; 2024 Train Tickets Limited and its affiliated companies. All rights reserved. Train Tickets Limited is registered in Narnia. Company No. 2. Registered address: 3rd floor, Edge of Nowhere Narnia 12</div>
+        <div class="border">
+            <div class="footer-links">
+                <div>Contanct Us</div>
+            </div>
+            <div class="copyright"><p>Copyright &copy; 2024 Train Tickets Limited and its affiliated companies. All rights reserved. Train Tickets Limited is registered in Narnia. Company No. 2. Registered address: 3rd floor, Center of Nowhere 11, Narnia</p></div>
+        </div>
     </footer>
 </body>
 </html>

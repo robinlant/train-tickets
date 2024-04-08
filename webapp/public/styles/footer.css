@@ -1,0 +1,29 @@
+footer {
+    padding: 20px 20px;
+    background-color:#141617;
+    color:white;
+}
+
+footer > .border {
+    border-top: 1px white solid;
+    padding-top: 20px;
+}
+
+footer .copyright {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
+}
+
+footer .copyright p{
+    max-width:800px;
+    width:auto;
+    color:#6B6B6B;
+    text-align:center;
+    font-size:14px;
+}
+
+footer .footer-links{
+    padding:0 20px;
+}

@@ -1,0 +1,43 @@
+header {
+    height:71px;
+    background-color:#141617;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size:38px;
+    font-weight:bold;
+}
+
+header .btns {
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+    width:341px;
+}
+
+#btn-login {
+    color:#141617;
+    background-color: white;
+    padding: 6px 16px;
+    border-radius: 20px;;
+}
+
+@media (max-width: 768px) {
+    header .disappearable-768px {
+        display:none;
+    }
+    
+    header .btns {
+        width:auto;
+    }
+}
