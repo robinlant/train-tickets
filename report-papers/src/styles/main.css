@@ -14,7 +14,7 @@ main .navigation{
     align-items:start;
 }
 
-main .view{
+main .view-container{
     flex:51  1000px;
     padding:10px;
     margin-right: 20px;
@@ -62,4 +62,9 @@ main .gradient-border-mask::before {
     background: linear-gradient(140deg, red, orange, yellow, green, indigo, blue) border-box;
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
+}
+
+main .view {
+    padding:10px ;
+    width: 100%;
 }
