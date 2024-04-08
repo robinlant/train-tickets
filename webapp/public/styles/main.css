@@ -1,0 +1,184 @@
+main {
+    position: relative;
+    color: white;
+    background-color: #000;
+    font-family: 'Arial', sans-serif;
+}
+
+#section-1 {
+    background-image: url("../images/frankfurt-bahnhof.jpeg");
+    background-size: cover;
+    background-position:left;
+    display:flex;
+    flex-direction:row-reverse;
+    position: relative;
+    justify-content: space-between;
+    padding:30px;
+    height: 630px;
+}
+
+#section-1 .h2-container {
+    max-width: 600px;
+    margin-bottom: 50px;
+    text-align:right;
+    text-wrap: wrap;
+    position:relative;
+    font-size:26px;
+}
+
+#section-1 form {
+    display: inline-block;
+    background: #141617;
+    padding: 20px;
+    border-radius: 20px;
+    align-items:center;
+    position: relative;
+
+    top:200px;
+    left:65px;
+}
+
+#section-1 form .first {
+    background-color: 1C1D1C;
+    border-radius:20%;
+}
+
+#section-1 form .first-1{
+    padding:0;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:baseline;
+}
+
+#section-1 form .button-wrap{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+#section-1 label {
+    flex-basis: 30%;
+    color:#918E8A;
+}
+
+#section-1 input[type="text"],
+#section-1 input[type="date"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    flex-basis:60%;
+}
+
+#section-1 button {
+    color:#141617;
+    background-color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border:none;
+}
+
+#section-2 {
+    text-align: center;
+    padding: 20px 40px; 
+}
+
+#section-2 > h2 {
+    font-size:30px;
+    font-weight:bold;
+}
+
+#section-2 > p {
+    font-size:20px;
+    color:#B0B0B0;
+}
+
+#section-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background: #141617;
+}
+
+#section-3 > div {
+    flex-basis: calc(33.333% - 40px);
+    margin: 20px;
+    padding: 20px;
+}
+
+#section-3 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#section-3 th,
+#section-3 td {
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+}
+
+#section-3 ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+#section-3 ul li {
+    padding: 5px 0;
+}
+
+#section-3 ol {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+#section-3 ol li {
+    padding: 5px 0;
+}
+/* TABLET */
+@media (max-width: 1024px) {
+    #section-1 {
+        flex-direction: column;
+        justify-content: baseline;
+        align-items: center;
+    }
+    
+    #section-1 .h2-container,
+    #section-1 form{
+        left:0;
+        right:0;
+        top:0;
+        bottom: 0;
+    }
+
+    #section-1 .form-container{
+        bottom:125px;
+    }
+
+    #section-3 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #section-3 > div {
+        flex-basis: calc(40% - 40px);
+        margin: 20px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 728px) {
+    #section-3 > div {
+        flex-basis: 100%;
+        margin: 20px 0;
+    }
+}

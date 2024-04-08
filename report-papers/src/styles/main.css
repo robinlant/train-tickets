@@ -14,11 +14,10 @@ main .navigation{
     align-items:start;
 }
 
-main .view{
-    border-radius: 20px;
-    border:1px solid darkred;
+main .view-container{
     flex:51  1000px;
-    padding:10px
+    padding:10px;
+    margin-right: 20px;
 }
 
 main .navigation .btn{
@@ -48,4 +47,24 @@ main .navigation .btn:hover{
     color: orange;
     box-shadow: 0px 3px 3px black;
     padding: 8px 13px;
+}
+
+main .gradient-border-mask {
+    backdrop-filter: blur(10px);
+}
+  
+main .gradient-border-mask::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    border: 3px solid transparent;
+    background: linear-gradient(140deg, red, orange, yellow, green, indigo, blue) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+main .view {
+    padding:10px ;
+    width: 100%;
 }
