@@ -122,6 +122,7 @@ main {
     padding: 10px;
     border: 1px solid #FFFFFF;
     text-align: center;
+    color:white;
 }
 
 #section-3 ul {
@@ -177,7 +178,7 @@ main {
 
 /* MOBILE */
 @media (max-width: 728px) {
-    #section-3 > div {
+    #section-3 div {
         flex-basis: 100%;
         margin: 20px 0;
     }
