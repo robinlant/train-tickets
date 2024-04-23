@@ -52,7 +52,7 @@ main .navigation .btn:hover{
 main .gradient-border-mask {
     backdrop-filter: blur(10px);
 }
-  
+
 main .gradient-border-mask::before {
     content: "";
     position: absolute;

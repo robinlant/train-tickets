@@ -280,33 +280,90 @@ const getLabsData = () => {
                 `
             },
             {
-                displayName: "Завдання",
+                displayName: "CSS Селектори",
                 html:
                 `
                  <div>
-                 
+                    <img src="src/images/2-1.png">
+                    <img src="src/images/2-2.png">
                  </div>
                 `
             },
             {
-                displayName: "Завдання",
+                displayName: "Селектори Класiв",
                 html:
                 `
                  <div>
-                 
+                    <img src="src/images/2-3.png">
+                    <img src="src/images/2-4.png">
                  </div>
                 `
             },
             {
-                displayName: "Завдання",
+                displayName: "Селектори Тегiв",
                 html:
                 `
                  <div>
-                 
+                    <img src="src/images/2-6.png">
+                    <img src="src/images/2-5.png">
+                 </div>
+                `
+            },            {
+                displayName: "Iншi Селектори",
+                html:
+                `
+                 <div>
+                    <img src="src/images/2-7.png">
+                    <img src="src/images/2-8.png">
+                    <img src="src/images/2-9.png">
                  </div>
                 `
             },
-
+            {
+                displayName: "Шрифти",
+                html:
+                `
+                 <div>
+                    <img src="src/images/2-10.png">
+                    <img src="src/images/2-11.png">
+                    <img src="src/images/2-12.png">
+                 </div>
+                `
+            },
+            {
+                displayName: "Kонтури Та Таблицi",
+                html:
+                `
+                 <div>
+                    <img src="src/images/2-13.png">
+                    <img src="src/images/2-14.png">
+                 </div>
+                `
+            },
+            {
+                displayName: "Колiр та Фон",
+                html:
+                `
+                 <div>
+                    <img src="src/images/2-15.png">
+                    <img src="src/images/2-16.png">
+                    <img src="src/images/2-17.png">
+                 </div>
+                `
+            },
+            {
+                displayName: "CSS Просунутий",
+                html:
+                `
+                 <div>
+                    <p>Маска Градiент</p>
+                    <img src="src/images/2-18.png">
+                    <img src="src/images/2-19.png">
+                    <p>Mediq queries</p>
+                    <img src="src/images/2-20.png">
+                 </div>
+                `
+            }
         ]
     };
 
