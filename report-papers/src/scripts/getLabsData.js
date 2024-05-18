@@ -1,4 +1,4 @@
-const escapeHTML = (string) => {
+const escapeHtml = (string) => {
     return string
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -389,6 +389,68 @@ const getLabsData = () => {
         isFinished: true,
         components: [
             {
+                displayName: "Тема",
+                html: 
+                `
+                <h1>
+                Тема: ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX.                
+                </h1>
+                `
+            },
+            {
+                displayName: "Мета",
+                html: 
+                `
+                <h1>
+                Мета:
+                ⎯ придбати практичні навички роботи верстки сторінок засобами CSS, верстки на
+                основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок
+                ⎯ придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX                
+                </h1>
+                `
+            },
+            {
+                displayName: "Завдання",
+                html: 
+                `
+                <h3>Завдання</h3>
+                <ol>
+                    <li>У звітному HTML-документі розмістити тему, мету, лабораторної роботи No3, місце розташування власного сайту та HTML звітного документу, а саме посилання на репозиторії</li>
+                    <li>Виконати Завдання No 1, а саме : розробити макет власного сайту. Який тип макету ви використовуєте. Вміти пояснити викладачу.</li>
+                    <li>Яку базову концепцію ви застосовуєте при верстці сторінок засобами CSS. Вміти пояснити викладачу.</li>
+                    <li>У звітному HTML-документі розмістити скріншот головної сторінки вашого сайту.</li>
+                    <li>У звітному HTML-документі розмістити HTML-програмний код головної сторінки власного сайту. Вміти пояснити викладачу особливості вашого макету.</li>
+                    <li>Засобами HTML та CSS виконати Завдання No2 у звітному HTML-документі , а саме:
+                        <ul>
+                            <li>Розмітку за допомогою таблиці (номер варіанта – остання цифра у списку групи)
+                                <ul>
+                                    <li>Фіксована таблична верстка</li>
+                                    <li>Гумова таблична верстка</li>
+                                </ul>
+                            </li>
+                            <li>Розмітку за допомогою блоків (плаваючих елементів) (номер варіанта – остання цифра у списку групи + 1)
+                                <ul>
+                                    <li>Фіксована блокова верстка</li>
+                                    <li>Гумова блокова верстка</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>У висновках написати переваги та недоліки створення веб-додатків за допомогою таблиці та за допомогою блоків (плаваючих блоків).</li>
+                    <li>Виконати Завдання No3, використовуючи засоби CSS та FLEXBOX.</li>
+                    <li>Кожному студенту виконати свій номер варіанта Завдання No3, за технологією FLEXBOX та засобами CSS.
+                        <ul>
+                            <li>Номер варіанта відповідає останній цифрі студента у списку групи. Наприклад, Студент 18 за списком – буде виконувати 8 варіант.</li>
+                            <li>У звітному HTML-документі розмістити скріншот сторінки, яка була виконана технологією FLEXBOX.</li>
+                            <li>У звітному HTML-документі розмістити HTML-код та CSS-код сторінки, яка була виконана технологією FLEXBOX.</li>
+                            <li>Вміти пояснити викладачу особливості вашого макету.</li>
+                        </ul>
+                    </li>
+                    <li>Написати та оформити висновки до всіх завдань.</li>
+                </ol>
+                `
+            },
+            {
                 displayName: "Головна сторінка сайту",
                 html: 
                 `
@@ -402,155 +464,75 @@ const getLabsData = () => {
             },
             {
                 displayName: "Програмний код",
-                html:  escapeHTML(
+                html: 
                 `
                 <div>
-                    <h2>Html</h2> 
-                    <code>
-                    <title>Train Tickets</title>
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-                    <link rel="stylesheet" href="styles/styles.css">
-                    <link rel="stylesheet" href="styles/header.css">
-                    <link rel="stylesheet" href="styles/main.css">
-                    <link rel="stylesheet" href="styles/footer.css">
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                </head>
-                <body>
-                    <header>
-                        <h1>Train Tickets</h1>
-                        <div class="btns">
-                            <div class="disappearable-768px" id="btn-cart">Cart</div>
-                            <div class="disappearable-768px" id="btn-login">Login</div>
-                            <div class="disappearable-768px" id="btn-register">Sign Up</div>
-                            <div id="btn-menu"><img src="images/menu.svg"></div>
-                        </div>
-                    </header>
-                
-                    <main>
-                        <div id="section-1" class="section">
-                            <div class="h2-container">
-                                <h2>Very trusted and very real company for buying and comparing train tickets in Europe</h2>
-                            </div>
-                            <div class="form-container">
-                            <form>
-                                <div class="first-1">
-                                    <label for="from">From</label>
-                                    <input type="text" id="from" placeholder="City or destination">
-                                </div>
-                                <div class="first-1">
-                                    <label for="to">To</label>
-                                    <input type="text" id="to" placeholder="City or destination">
-                                </div>
-                                <div class="first-1">
-                                    <label for="date">Date</label>
-                                    <input type="date" id="date">
-                                </div>
-                                
-                                <div class="button-wrap"><button type="submit">Search</button></div>
-                            </form>
-                        </div>
-                        </div>
-                
-                        <div id="section-2" class="section">
-                            <h2>About Train Tickets</h2>
-                            <p>Embarking on a journey across the breathtaking landscapes of Europe, Fantasia Express Tickets emerges not just as a purveyor of passages but as the very gateway to adventure. Nestled in the heart of Narnia, at the whimsical address of 3rd floor, Edge of Nowhere, our essence weaves through the fabric of reality and fantasy. Unlike any, our foundation in Narnia empowers us with the unique ability to offer tickets to dreams and destinations alike.
-                                At Fantasia Express Tickets, we don't merely sell tickets; we curate pathways to the soul of Europe. Our offerings are more than a transaction—they are an invitation to traverse the vast, enchanting expanses of a continent rich with history, culture, and unparalleled beauty. Our selection caters to all, from the youthful wanderer yearning for discovery to the seasoned traveler seeking solace in Europe's serene landscapes, with special courtesies extended to our senior adventurers.
-                                Why choose Fantasia Express Tickets? The answer is woven into the tapestry of trust, reliability, and genuine care we extend to each traveler. With us, you're not just buying a ticket; you're unlocking a journey steeped in wonder, guided by a company as real as the magical lands of Narnia we call home. Fantasia Express Tickets—where every ticket is a promise of adventure.</p>
-                        </div>
-                
-                        <div id="section-3" class="section">
-                            <div class="age-table-container">
-                                <h2>Age table</h2>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Youth</th>
-                                            <th>Adult</th>
-                                            <th>Senior</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>0 - 25</td>
-                                            <td>26 - 59</td>
-                                            <td>60 +</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                            <div class="bonuses-list-container">
-                                <h2>Bonuses for seniors</h2>
-                                <ul>
-                                    <li>20% off on long trains</li>
-                                    <li>15% off on short trains</li>
-                                    <li>Free cup of tea</li>
-                                </ul>
-                            </div>
-                        
-                            <div class="why-we-list-container">
-                                <h2>Why we?</h2>
-                                <ol>
-                                    <li>We are real</li>
-                                    <li>We are trusted</li>
-                                    <li>We do have an office</li>
-                                </ol>
-                            </div>
-                        </div>
-                        
-                    </main>
-                    <footer>
-                        <div class="border">
-                            <div class="footer-links">
-                                <div>Contanct Us</div>
-                            </div>
-                            <div class="copyright"><p>Copyright &copy; 2024 Train Tickets Limited and its affiliated companies. All rights reserved. Train Tickets Limited is registered in Narnia. Company No. 2. Registered address: 3rd floor, Center of Nowhere 11, Narnia</p></div>
-                        </div>
-                    </footer>
-                </body>
-                </html>
-                    </code>
-                </div>
-                `)
-            },
-            {
-                displayName: "Головна сторінка сайту",
-                html:  
-                `
-                <div>
-
+                    <img src="src/images/3-5.png">
+                    <img src="src/images/3-6.png">
                 </div>
                 `
             },
             {
-                displayName: "Головна сторінка сайту",
+                displayName: "Завання 1",
                 html:  
                 `
                 <div>
+                    <h1> Взято варіант 1</h1>
+                    <img src="src/images/3-7.png">
                 </div>
                 `
             },
             {
-                displayName: "Головна сторінка сайту",
+                displayName: "Завдяння 2",
                 html:  
                 `
                 <div>
-
+                    <h1> Взято варіант 1</h1>
+                    <img src="src/images/3-8.png">
+                    <img src="src/images/3-9.png">
                 </div>
                 `
             },
             {
-                displayName: "Головна сторінка сайту",
+                displayName: "Висновок",
                 html:  
                 `
-                <div>
-
+                <div> 
+                    <h3>Виконуючи цю лр я познайомився з флексбоксом та використав його на практиці у фіксованому та гумовому варіанті</h3>
+                    <p>
+                        <b>Flexbox (гумова верстка):</b>
+                        <ul>
+                            <li><b>Переваги:</b></li>
+                            <ul>
+                                <li>Легко створювати адаптивні макети, що підлаштовуються під різні розміри екранів.</li>
+                                <li>Автоматичне вирівнювання та розподіл простору між елементами.</li>
+                                <li>Забезпечує гнучкість та динамічність макетів.</li>
+                            </ul>
+                            <li><b>Недоліки:</b></li>
+                            <ul>
+                                <li>Потребує більше часу для освоєння, особливо для новачків.</li>
+                                <li>Може бути складно передбачити поведінку макета у дуже маленьких або дуже великих розмірах.</li>
+                            </ul>
+                        </ul>
+                    </p>
+                    <p>
+                        <b>Flexbox (статична верстка):</b>
+                        <ul>
+                            <li><b>Переваги:</b></li>
+                            <ul>
+                                <li>Легше контролювати точне позиціонування та розміри елементів.</li>
+                                <li>Стабільність макету при фіксованих розмірах вікна браузера.</li>
+                            </ul>
+                            <li><b>Недоліки:</b></li>
+                            <ul>
+                                <li>Менша адаптивність до різних розмірів екранів.</li>
+                                <li>Потребує додаткових медіа-запитів для створення адаптивних макетів.</li>
+                            </ul>
+                        </ul>
+                    </p>
                 </div>
                 `
-            },
+            },            
         ]
     };
 
@@ -559,9 +541,41 @@ const getLabsData = () => {
         isFinished: false,
         components: [
             {
-                displayName: "",
-                html: ``
-            }
+                displayName: "Тема",
+                html:
+                `<div>
+                    <h2>Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ
+                    ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</h2>
+                </div>`
+            },
+            {
+                displayName: "Мета",
+                html:
+                `<div>
+                    <p><b>Мета:</b>придбати практичні навички роботи з селекторами, ідентифікаторами,
+                    списками, різноманітними властивостями кольору і фону, зовнішними та
+                    внутрішними відступами, плаваючими елементами, оформленням текстових
+                    елементів</p>
+                </div>`
+            },
+            {
+                displayName: "Тема",
+                html:
+                `<div>
+                    <h2>Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ
+                    ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.</h2>
+                </div>`
+            },
+            {
+                displayName: "Мета",
+                html:
+                `<div>
+                    <p><b>Мета:</b>придбати практичні навички роботи з селекторами, ідентифікаторами,
+                    списками, різноманітними властивостями кольору і фону, зовнішними та
+                    внутрішними відступами, плаваючими елементами, оформленням текстових
+                    елементів</p>
+                </div>`
+            },
         ]
     };
 
@@ -640,7 +654,6 @@ const getLabsData = () => {
                 displayName: "Flexbox Task 2",
                 html: `<a href="../flexbox-harder/index.html" target="_blank">Open in a new tab</a>`
             },
-            
         ]
     }
 
