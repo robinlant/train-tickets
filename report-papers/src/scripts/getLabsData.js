@@ -775,7 +775,7 @@ const getLabsData = () => {
             },
             {
                 displayName: "WebApp",
-                html: `<a href="../webapp/public/index.html" target="_blank">Open in a new tab</a>`
+                html: `<a href="../webapp/index.html" target="_blank">Open in a new tab</a>`
             },
             {
                 displayName: "Flexbox Task 1",
