@@ -1,7 +1,15 @@
+const escapeHTML = (string) => {
+    return string
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+};
+
 // For now i just hardcode data into the function,
 // because i cant access file system while code running in the browser 
 // and i dont want to setup a backend for this nor using a module bundler
-
 const getLabsData = () => {  
     const lab1 = {
         btnId: "btn-l1",
@@ -363,18 +371,186 @@ const getLabsData = () => {
                     <img src="src/images/2-20.png">
                  </div>
                 `
+            },
+            {
+                displayName: "Висновок",
+                html:
+                `
+                 <p>
+                    Виконуючи лаб роботу я познайомився з каскадною таблицею стилів стилів та використав іі на практиці у своему проекті та звітньому документі
+                 <p>
+                `
             }
         ]
     };
 
     const lab3 = {
         btnId: "btn-l3",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
-                displayName: "",
-                html: ``
-            }
+                displayName: "Головна сторінка сайту",
+                html: 
+                `
+                <div>
+                    <img src="src/images/3-1.png">
+                    <img src="src/images/3-2.png">
+                    <img src="src/images/3-3.png">
+                    <img src="src/images/3-4.png">
+                </div>
+                `
+            },
+            {
+                displayName: "Програмний код",
+                html:  escapeHTML(
+                `
+                <div>
+                    <h2>Html</h2> 
+                    <code>
+                    <title>Train Tickets</title>
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+                    <link rel="stylesheet" href="styles/styles.css">
+                    <link rel="stylesheet" href="styles/header.css">
+                    <link rel="stylesheet" href="styles/main.css">
+                    <link rel="stylesheet" href="styles/footer.css">
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                </head>
+                <body>
+                    <header>
+                        <h1>Train Tickets</h1>
+                        <div class="btns">
+                            <div class="disappearable-768px" id="btn-cart">Cart</div>
+                            <div class="disappearable-768px" id="btn-login">Login</div>
+                            <div class="disappearable-768px" id="btn-register">Sign Up</div>
+                            <div id="btn-menu"><img src="images/menu.svg"></div>
+                        </div>
+                    </header>
+                
+                    <main>
+                        <div id="section-1" class="section">
+                            <div class="h2-container">
+                                <h2>Very trusted and very real company for buying and comparing train tickets in Europe</h2>
+                            </div>
+                            <div class="form-container">
+                            <form>
+                                <div class="first-1">
+                                    <label for="from">From</label>
+                                    <input type="text" id="from" placeholder="City or destination">
+                                </div>
+                                <div class="first-1">
+                                    <label for="to">To</label>
+                                    <input type="text" id="to" placeholder="City or destination">
+                                </div>
+                                <div class="first-1">
+                                    <label for="date">Date</label>
+                                    <input type="date" id="date">
+                                </div>
+                                
+                                <div class="button-wrap"><button type="submit">Search</button></div>
+                            </form>
+                        </div>
+                        </div>
+                
+                        <div id="section-2" class="section">
+                            <h2>About Train Tickets</h2>
+                            <p>Embarking on a journey across the breathtaking landscapes of Europe, Fantasia Express Tickets emerges not just as a purveyor of passages but as the very gateway to adventure. Nestled in the heart of Narnia, at the whimsical address of 3rd floor, Edge of Nowhere, our essence weaves through the fabric of reality and fantasy. Unlike any, our foundation in Narnia empowers us with the unique ability to offer tickets to dreams and destinations alike.
+                                At Fantasia Express Tickets, we don't merely sell tickets; we curate pathways to the soul of Europe. Our offerings are more than a transaction—they are an invitation to traverse the vast, enchanting expanses of a continent rich with history, culture, and unparalleled beauty. Our selection caters to all, from the youthful wanderer yearning for discovery to the seasoned traveler seeking solace in Europe's serene landscapes, with special courtesies extended to our senior adventurers.
+                                Why choose Fantasia Express Tickets? The answer is woven into the tapestry of trust, reliability, and genuine care we extend to each traveler. With us, you're not just buying a ticket; you're unlocking a journey steeped in wonder, guided by a company as real as the magical lands of Narnia we call home. Fantasia Express Tickets—where every ticket is a promise of adventure.</p>
+                        </div>
+                
+                        <div id="section-3" class="section">
+                            <div class="age-table-container">
+                                <h2>Age table</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Youth</th>
+                                            <th>Adult</th>
+                                            <th>Senior</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0 - 25</td>
+                                            <td>26 - 59</td>
+                                            <td>60 +</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="bonuses-list-container">
+                                <h2>Bonuses for seniors</h2>
+                                <ul>
+                                    <li>20% off on long trains</li>
+                                    <li>15% off on short trains</li>
+                                    <li>Free cup of tea</li>
+                                </ul>
+                            </div>
+                        
+                            <div class="why-we-list-container">
+                                <h2>Why we?</h2>
+                                <ol>
+                                    <li>We are real</li>
+                                    <li>We are trusted</li>
+                                    <li>We do have an office</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                    </main>
+                    <footer>
+                        <div class="border">
+                            <div class="footer-links">
+                                <div>Contanct Us</div>
+                            </div>
+                            <div class="copyright"><p>Copyright &copy; 2024 Train Tickets Limited and its affiliated companies. All rights reserved. Train Tickets Limited is registered in Narnia. Company No. 2. Registered address: 3rd floor, Center of Nowhere 11, Narnia</p></div>
+                        </div>
+                    </footer>
+                </body>
+                </html>
+                    </code>
+                </div>
+                `)
+            },
+            {
+                displayName: "Головна сторінка сайту",
+                html:  
+                `
+                <div>
+
+                </div>
+                `
+            },
+            {
+                displayName: "Головна сторінка сайту",
+                html:  
+                `
+                <div>
+                </div>
+                `
+            },
+            {
+                displayName: "Головна сторінка сайту",
+                html:  
+                `
+                <div>
+
+                </div>
+                `
+            },
+            {
+                displayName: "Головна сторінка сайту",
+                html:  
+                `
+                <div>
+
+                </div>
+                `
+            },
         ]
     };
 
@@ -455,7 +631,15 @@ const getLabsData = () => {
             {
                 displayName: "WebApp",
                 html: `<a href="../webapp/public/index.html" target="_blank">Open in a new tab</a>`
-            }
+            },
+            {
+                displayName: "Flexbox Task 1",
+                html: `<a href="../flexbox-simple/index.html" target="_blank">Open in a new tab</a>`
+            },
+            {
+                displayName: "Flexbox Task 2",
+                html: `<a href="../flexbox-harder/index.html" target="_blank">Open in a new tab</a>`
+            },
         ]
     }
 
