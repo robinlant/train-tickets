@@ -640,6 +640,7 @@ const getLabsData = () => {
                 displayName: "Flexbox Task 2",
                 html: `<a href="../flexbox-harder/index.html" target="_blank">Open in a new tab</a>`
             },
+            
         ]
     }
 

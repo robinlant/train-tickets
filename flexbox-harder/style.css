@@ -1,0 +1,67 @@
+header nav > a, select {
+    color: white;
+    background-color:black;
+    padding:10px 11px;
+    margin:0 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+main > section {
+    padding: 0;
+    background-color: lightgrey;
+    margin-top: 30px;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    background-color: white;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rotated {
+    transform: rotate(10deg);
+    display: block;
+    margin: 10px auto;
+}
+
+.umami {
+    width: 300px;
+}
+
+.partner-section {
+    flex-direction: row;
+    align-items: center;
+}
+
+.partner {
+    width: 300px;
+}
+
+.partner-text {
+    width: calc(100% - 320px);
+    text-align: left;
+    padding-left: 20px;
+}
