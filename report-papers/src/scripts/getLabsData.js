@@ -770,20 +770,20 @@ const getLabsData = () => {
         isFinished: true,
         components: [
             {
-                displayName: "Resume",
-                html: `<a href="../resume/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Резюме",
+                html: `<a href="https://secondaccountmine.github.io/resume/" target="_blank">Open in a new tab</a>`
             },
             {
-                displayName: "WebApp",
-                html: `<a href="../webapp/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Сайт",
+                html: `<a href="https://secondaccountmine.github.io/webapp/" target="_blank">Open in a new tab</a>`
             },
             {
-                displayName: "Flexbox Task 1",
-                html: `<a href="../flexbox-simple/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Флексбокс завдання один",
+                html: `<a href="https://secondaccountmine.github.io/flexbox-simple/" target="_blank">Open in a new tab</a>`
             },
             {
-                displayName: "Flexbox Task 2",
-                html: `<a href="../flexbox-harder/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Флексбокс завдання два",
+                html: `<a href="https://secondaccountmine.github.io/flexbox-harder/" target="_blank">Open in a new tab</a>`
             },
         ]
     }
