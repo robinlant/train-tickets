@@ -15,12 +15,11 @@ const insertionSort = (array) => {
 
             sorted--;
         }
-
-        console.log("iteration    " + i + "   " + array.toString());
     }
 }
-// User Input
+// User Input ========================================================================
 const initialArray = [5, 4, 3, 2, 1, 10];
+// ===================================================================================
 
 const arrayB = buildArrayB(initialArray);
 
