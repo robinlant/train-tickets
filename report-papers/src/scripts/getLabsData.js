@@ -7,6 +7,11 @@ const escapeHtml = (string) => {
         .replace(/'/g, '&#39;');
 };
 
+const makeBrs = (string) => {
+    return string
+        .replace("//break", "<br>")
+}
+
 // For now i just hardcode data into the function,
 // because i cant access file system while code running in the browser 
 // and i dont want to setup a backend for this nor using a module bundler
@@ -682,22 +687,230 @@ const getLabsData = () => {
                 displayName: "Завдання 1 (з пункту 2)",
                 html:
                 `<div>
-                Код Застосунку 
+                <p>Код Застосунку</p>
                 <img src="./src/images/5-1.png">
                 <img src="./src/images/5-2.png">
-                Аутпут у консолі за використанням node js
+                <p>Аутпут у консолі за використанням node js</p>
                 <img src="./src/images/5-3.png">
                 </div>`
             },
             {
                 displayName: "Завдання 2 (з пункту 6)",
                 html:
+                `<div><br>
+                Код Застосунку<br> 
+                class Calculator {<br>
+                    constructor() {<br>
+                        this._setupDefault();<br>
+                    }<br>
+                    <br>
+                    operations = {
+<br>                        None: "",
+<br>                    Plus: "+",
+<br>                    Minus: "-",
+<br>                    Multiply: "*",
+<br>                    Divide: "/",
+<br>                    Modulo: "%",
+<br>                    Square: "sqrt",
+<br>                    Raise: "^",
+<br>                }
+<br>            
+<br>                inputNumber(number) {
+    <br>                    switch(this._state) {
+        <br>                    case this._states.firstInput: {
+            <br>                    this._firstInput = this._firstInput * 10 + number;
+            <br>                return;
+            <br>            }
+            <br>            case this._states.secondInput: {
+                <br>                this._secondInput = this._secondInput * 10 + number;
+                <br>            this._tempSecondInput = this._secondInput;
+                <br>            return;
+                <br>        }
+                <br>        default: {
+                    <br>                                console.error("error at inputNumber case default is hit");
+                    <br>    }
+                    <br>}
+                    <br>}
+                    <br>
+                    <br>              clear() {
+                        <br>this._setupDefault();
+                        <br>}
+                        <br>
+                        <br>sqrt() {
+                            <br>  if (this._state != this._states.firstInput) return;
+                            <br>
+                            <br>this._lastOperationCallback = (firstInput) => Math.sqrt(firstInput);
+                            <br>
+                            <br>                        this._firstInput = this._lastOperationCallback(this._firstInput);
+                            <br>}
+                
+                            <br>getOutputInfo() {
+                        <br>    switch(this._state) {
+ <br>                           case this._states.firstInput: {
+ <br>                               return { text: this._firstInput, operation: this._operation } ;
+ <br>                           }
+  <br>                          case this._states.secondInput: {
+   <br>                             return { text: this._secondInput, operation: this._operation };
+   <br>                         }
+  <br>                          default: {
+ <br>                               console.error("error at getOutputInfo case default is hit");
+ <br>                           }
+ <br>                       }
+ <br>                   }
+ <br>               
+ <br>                   inputOperation(operation) {
+ <br>                       switch(this._state){
+ <br>                           case this._states.firstInput: {
+ <br>                               this._operation = operation;
+ <br>                               this._toggleState();
+  <br>                              return;
+ <br>                           }
+ <br>                           case this._states.secondInput:{
+ <br>                               if (this._secondInput == 0) return; // Do nothing
+ <br>               
+ <br>                               this._toggleState();
+ <br>                               this.inputOperation(operation);
+  <br>                              return;
+ <br>                           }
+ <br>                           default: {
+ <br>                               console.error("error at inputOperation case default is hit");
+ <br>                               return;
+ <br>                           }
+<br>                        }
+ <br>                   }
+ <br>               
+   <br>                 equals() {
+   <br>                     switch(this._state) {
+   <br>                         case this._states.firstInput: {
+   <br>                             if (this._lastOperationCallback == null) return;
+   <br>             
+   <br>                             this._firstInput = this._lastOperationCallback(this._firstInput);
+   <br>                             this._secondInput = 0;
+   <br>             
+   <br>                             this._state = this._states.firstInput;
+   <br>                             return;
+   <br>                         }
+   <br>                         case this._states.secondInput: {
+   <br>                             this._toggleState();
+   <br>                             return;
+   <br>                         }
+   <br>                         default: {
+     <br>                           console.error("error at equals case default is hit");
+     <br>                       }
+     <br>                   }
+     <br>               }
+     <br>           
+     <br>               delete() {
+     <br>                   switch(this._state) {
+     <br>                       case this._states.firstInput: {
+     <br>                           this._firstInput = this._firstInput.toString().slice(0, -1) || '0';
+     <br>                           this._firstInput = parseInt(this._firstInput, 10);
+     <br>                           return;
+     <br>                       }
+     <br>                       case this._states.secondInput: {
+     <br>                           this._secondInput = this._secondInput.toString().slice(0, -1) || '0';
+     <br>                           this._secondInput = parseInt(this._secondInput, 10);
+     <br>                           this._tempSecondInput = this._secondInput;
+     <br>                           return;
+     <br>                       }
+      <br>                      default: {
+     <br>                           console.error("error at delete case default is hit");
+      <br>                      }
+     <br>                   }
+     <br>               }
+      <br>              
+      <br>              
+     <br>           
+     <br>               _states = {
+      <br>                  firstInput: 1,
+      <br>                  secondInput: 2,
+       <br>             }
+       <br>         
+       <br>             _toggleState() {
+       <br>                 switch(this._state) {
+       <br>                     case this._states.firstInput: {
+       <br>                         this._state = this._states.secondInput;
+     <br>                           return;
+     <br>                       }
+     <br>                       case this._states.secondInput: {
+     <br>                           this._lastOperationCallback = this._getExecuteOperationCallback();
+     <br>                           this._firstInput = this._lastOperationCallback(this._firstInput);
+     <br>           
+     <br>                           this._secondInput = 0;
+       <br>         
+     <br>                           this._state = this._states.firstInput;
+        <br>                        return;
+        <br>                    }
+        <br>                    default: {
+        <br>                        console.error("error at _toggleState case default is hit");
+        <br>                    }
+        <br>                }
+        <br>            }
+        <br>        
+        <br>            _getExecuteOperationCallback() {
+         <br>               switch(this._operation) {
+         <br>                   case this.operations.Plus:
+         <br>                       return this._getPlusOperationCallback();
+         <br>                   case this.operations.Minus:
+       <br>                         return this._getMinusOperationCallback();
+       <br>                     case this.operations.Multiply:
+       <br>                         return this._getMultiplyOperationCallback();
+       <br>                     case this.operations.Divide:
+      <br>                          return this._getDivideOperationCallback();
+      <br>                      case this.operations.Modulo:
+      <br>                          return this._getModuloOperationCallback();
+      <br>                      case this.operations.Raise:
+      <br>                          return this._getRaiseOperationCallback();
+      <br>                      default:
+      <br>                          console.error("error at _getExecuteOperationCallback case default is hit");
+      <br>                  }
+      <br>              }
+      <br>              
+      <br>          
+      <br>              _getPlusOperationCallback() {
+      <br>                   return (input) => input + this._tempSecondInput;
+      <br>              }
+      <br>              
+      <br>              _getMinusOperationCallback() {
+      <br>                  return (input) => input - this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getMultiplyOperationCallback() {
+      <br>                  return (input) => input * this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getDivideOperationCallback() {
+      <br>                  return (input) => input / this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getModuloOperationCallback() {
+      <br>                  return (input) => input % this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getRaiseOperationCallback() {
+      <br>                  return (input) => Math.pow(input, this._tempSecondInput);
+      <br>              }
+      <br>          
+      <br>              _setupDefault() {
+      <br>                  this._firstInput = 0;
+      <br>                  this._secondInput = 0;
+      <br>                  this._operation = this.operations.None;
+      <br>                  this._state = this._states.firstInput;
+      <br>                  this._lastOperationCallback = null;
+      <br>                  this._tempSecondInput = 0;
+      <br>              }
+      <br>          }
+      <br>          
+      <br>          Тещо е у браузері
+      <br>          <img src="./src/images/5-4.png">          </div>`
+            },
+            {
+                displayName: "Висновок",
+                html:
                 `<div>
-                Код Застосунку 
-                <img src="./src/images/5-1.png">
-                <img src="./src/images/5-2.png">
-                Тещо е у браузері
-                <img src="./src/images/5-4.png">
+                    <h2>
+                        Виконуючи цю лаб роботу я познайомився ближче з мовою програмування джаваскрипт та використав іі на практиці написавши калькулятор та сортировку
+                    </h2>
                 </div>`
             },
 
