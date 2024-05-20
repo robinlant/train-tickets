@@ -52,41 +52,33 @@ const elements = {
     }
 };
 
-const updateText = (outputObject) => {
-    elements.screenText.innerHTML = outputObject.text;
-    elements.operationText.innerHTML = outputObject.operation;
-}
-
 const calculator = new Calculator();
 
-elements.btn0.onclick = () => {
-    calculator.inputNumber(0);
+const updateScreen = (outputInfo) => {
+    elements.screenText.innerHTML = outputInfo.text;
+    elements.operationText.innerHTML = outputInfo.operation;
+}
 
+// callback should take a number
+const addNumbersOnclick = (callback, elems) => {
+    elems.forEach((x, i) => {
+        x.onclick = () => callback(i);
+    });
 }
-elements.btn1.onclick = () => {
-    calculator.inputNumber(1);
-}
-elements.btn2.onclick = () => {
-    calculator.inputNumber(2);
-}
-elements.btn3.onclick = () => {
-    calculator.inputNumber(3);
-}
-elements.btn4.onclick = () => {
-    calculator.inputNumber(4);
-}
-elements.btn5.onclick = () => {
-    calculator.inputNumber(5);
-}
-elements.btn6.onclick = () => {
-    calculator.inputNumber(6);
-}
-elements.btn7.onclick = () => {
-    calculator.inputNumber(7);
-}
-elements.btn8.onclick = () => {
-    calculator.inputNumber(8);
-}
-elements.btn9.onclick = () => {
-    calculator.inputNumber(9);
-}
+
+addNumbersOnclick((number) => {
+    calculator.inputNumber(number);
+    const outputInfo = calculator.getOutputInfo();
+    updateScreen(outputInfo);
+}, [
+    elements.buttons.btn0,
+    elements.buttons.btn1,
+    elements.buttons.btn2,
+    elements.buttons.btn3,
+    elements.buttons.btn4,
+    elements.buttons.btn5,
+    elements.buttons.btn6,
+    elements.buttons.btn7,
+    elements.buttons.btn8,
+    elements.buttons.btn9
+]);
