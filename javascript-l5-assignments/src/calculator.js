@@ -22,6 +22,7 @@ class Calculator {
             }
             case this._states.secondInput: {
                 this._secondInput = this._secondInput * 10 + number;
+                this._tempSecondInput = this._secondInput;
                 return;
             }
             default: {
@@ -100,6 +101,7 @@ class Calculator {
             case this._states.secondInput: {
                 this._secondInput = this._secondInput.toString().slice(0, -1) || '0';
                 this._secondInput = parseInt(this._secondInput, 10);
+                this._tempSecondInput = this._secondInput;
                 return;
             }
             default: {
@@ -124,6 +126,7 @@ class Calculator {
             case this._states.secondInput: {
                 this._lastOperationCallback = this._getExecuteOperationCallback();
                 this._firstInput = this._lastOperationCallback(this._firstInput);
+
                 this._secondInput = 0;
 
                 this._state = this._states.firstInput;
@@ -156,27 +159,27 @@ class Calculator {
     
 
     _getPlusOperationCallback() {
-         return (input) => input + this._secondInput;
+         return (input) => input + this._tempSecondInput;
     }
     
     _getMinusOperationCallback() {
-        return (input) => input - this._secondInput;
+        return (input) => input - this._tempSecondInput;
     }
 
     _getMultiplyOperationCallback() {
-        return (input) => input * this._secondInput;
+        return (input) => input * this._tempSecondInput;
     }
 
     _getDivideOperationCallback() {
-        return (input) => input / this._secondInput;
+        return (input) => input / this._tempSecondInput;
     }
 
     _getModuloOperationCallback() {
-        return (input) => input % this._secondInput; // Corrected from subtraction to modulo operation
+        return (input) => input % this._tempSecondInput;
     }
 
     _getRaiseOperationCallback() {
-        return (input) => Math.pow(input, this._secondInput); // Corrected to use Math.pow for exponentiation
+        return (input) => Math.pow(input, this._tempSecondInput);
     }
 
     _setupDefault() {
@@ -185,5 +188,6 @@ class Calculator {
         this._operation = this.operations.None;
         this._state = this._states.firstInput;
         this._lastOperationCallback = null;
+        this._tempSecondInput = 0;
     }
 }
