@@ -82,3 +82,32 @@ addNumbersOnclick((number) => {
     elements.buttons.btn8,
     elements.buttons.btn9
 ]);
+
+elements.buttons.btnC.onclick = () => {
+    calculator.clear();
+    updateScreen(calculator.getOutputInfo());
+};
+elements.buttons.btnDivide.onclick = () => {
+    calculator.inputOperation(calculator.operations.Divide);
+    updateScreen(calculator.getOutputInfo());
+};
+elements.buttons.btnPlus.onclick = () => {
+    calculator.inputOperation(calculator.operations.Plus);
+    updateScreen(calculator.getOutputInfo());
+};
+elements.buttons.btnMultiply.onclick = () => {
+    calculator.inputOperation(calculator.operations.Multiply);
+    updateScreen(calculator.getOutputInfo());
+};
+elements.buttons.btnMinus.onclick = () => {
+    calculator.inputOperation(calculator.operations.Minus);
+    updateScreen(calculator.getOutputInfo());
+};
+elements.buttons.btnModulo.onclick = () => {
+    calculator.inputOperation(calculator.operations.Modulo);
+    updateScreen(calculator.getOutputInfo());
+};
+elements.buttons.btnRaise.onclick = () => {
+    calculator.inputOperation(calculator.operations.Raise);
+    updateScreen(calculator.getOutputInfo());
+};
