@@ -111,3 +111,11 @@ elements.buttons.btnRaise.onclick = () => {
     calculator.inputOperation(calculator.operations.Raise);
     updateScreen(calculator.getOutputInfo());
 };
+elements.buttons.btnDel.onclick = () => {
+    calculator.delete();
+    updateScreen(calculator.getOutputInfo());
+}
+elements.buttons.btnResult.onclick = () => {
+    calculator.equals();
+    updateScreen(calculator.getOutputInfo());
+}

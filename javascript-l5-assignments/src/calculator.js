@@ -56,16 +56,59 @@ class Calculator {
                 return;
             }
             case this._states.secondInput:{
+                if (this._secondInput == 0) return; // Do nothing
+
                 this._toggleState();
-                 this.inputOperation(operation);
+                this.inputOperation(operation);
                 return;
             }
             default: {
-                console.error("error at getOutputInfo case default is hit");
+                console.error("error at inputOperation case default is hit");
                 return;
             }
         }
     }
+
+    equals() {
+        switch(this._state) {
+            case this._states.firstInput: {
+                if (this._lastOperationCallback == null) return;
+
+                this._firstInput = this._lastOperationCallback(this._firstInput);
+                this._secondInput = 0;
+
+                this._state = this._states.firstInput;
+                return;
+            }
+            case this._states.secondInput: {
+                this._toggleState();
+                return;
+            }
+            default: {
+                console.error("error at equals case default is hit");
+            }
+        }
+    }
+
+    delete() {
+        switch(this._state) {
+            case this._states.firstInput: {
+                this._firstInput = this._firstInput.toString().slice(0, -1) || '0';
+                this._firstInput = parseInt(this._firstInput, 10);
+                return;
+            }
+            case this._states.secondInput: {
+                this._secondInput = this._secondInput.toString().slice(0, -1) || '0';
+                this._secondInput = parseInt(this._secondInput, 10);
+                return;
+            }
+            default: {
+                console.error("error at delete case default is hit");
+            }
+        }
+    }
+    
+    
 
     _states = {
         firstInput: 1,
@@ -83,7 +126,7 @@ class Calculator {
                 this._firstInput = this._lastOperationCallback(this._firstInput);
                 this._secondInput = 0;
 
-                this._state = this._states.secondInput;
+                this._state = this._states.firstInput;
                 return;
             }
             default: {
@@ -129,11 +172,11 @@ class Calculator {
     }
 
     _getModuloOperationCallback() {
-        return (input) => input - this._secondInput;
+        return (input) => input % this._secondInput; // Corrected from subtraction to modulo operation
     }
 
     _getRaiseOperationCallback() {
-        return (input) => input ^ this._secondInput;
+        return (input) => Math.pow(input, this._secondInput); // Corrected to use Math.pow for exponentiation
     }
 
     _setupDefault() {
