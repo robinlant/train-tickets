@@ -679,10 +679,25 @@ const getLabsData = () => {
                 </div>`
             },
             {
-                displayName: "Завдання",
+                displayName: "Завдання 1 (з пункту 2)",
                 html:
                 `<div>
-                    <p><b>Мета:</b>придбати практичні навички роботи з масивами у js-сценаріях. Реалізація програм засовами мови JAVASCRIPT</p>
+                Код Застосунку 
+                <img src="./src/images/5-1.png">
+                <img src="./src/images/5-2.png">
+                Аутпут у консолі за використанням node js
+                <img src="./src/images/5-3.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 2 (з пункту 6)",
+                html:
+                `<div>
+                Код Застосунку 
+                <img src="./src/images/5-1.png">
+                <img src="./src/images/5-2.png">
+                Тещо е у браузері
+                <img src="./src/images/5-4.png">
                 </div>`
             },
 
