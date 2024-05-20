@@ -35,6 +35,14 @@ class Calculator {
         this._setupDefault();
     }
 
+    sqrt() {
+        if (this._state != this._states.firstInput) return;
+        
+        this._lastOperationCallback = (firstInput) => Math.sqrt(firstInput);
+
+        this._firstInput = this._lastOperationCallback(this._firstInput);
+    }
+
     getOutputInfo() {
         switch(this._state) {
             case this._states.firstInput: {

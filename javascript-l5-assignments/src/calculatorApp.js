@@ -119,3 +119,7 @@ elements.buttons.btnResult.onclick = () => {
     calculator.equals();
     updateScreen(calculator.getOutputInfo());
 }
+elements.buttons.btnSquare.onclick = () => {
+    calculator.sqrt();
+    updateScreen(calculator.getOutputInfo());
+}
