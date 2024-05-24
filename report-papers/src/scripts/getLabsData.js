@@ -919,7 +919,7 @@ const getLabsData = () => {
 
     const lab51 = {
         btnId: "btn-l5-1",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
                 displayName: "Тема",
@@ -937,15 +937,84 @@ const getLabsData = () => {
                 </div>`
             },
             {
-                displayName: "Завдання з лр 5.1",
+                displayName: "Завдання 1",
                 html:
                 `<div>
-                    <p><b>Мета(5):</b>придбати практичні навички роботи з масивами у js-сценаріях. Реалізація програм засовами мови JAVASCRIPT</p>
-                    <p><b>Мета(5.1):</b>придбати практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки.
-                    . Реалізація програм засовами мови JAVASCRIPT</p>
+                    <p>
+                    Напишіть наступні функції:
+                    createProduct(obj, callback) - приймає об'єкт товару без id, а також коллбек. Функція створює об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому створений об'єкт.
+                    logProduct(product) - колббек що приймає об'єкт продукту і логуючий його в консоль logTotalPrice(product) - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
+                    </p>
+                    <img src="./src/images/51-1.png">
+                    <img src="./src/images/51-2.png">
                 </div>`
             },
-
+            {
+                displayName: "Завдання 3",
+                html:
+                `<div>
+                    <p>
+                    З об'єкту medicines потрібно отримати масив в якому будуть лише назви препаратів.
+                    З масиву потрібно прибрати медикаменти , в яких строк зберігання уже пройшов . У новому масиві відсортувати медикаменти у хронологічному порядку.
+                    Результат вивести у консоль. Застосувати стрілочні функції
+                    const medicines = {
+                    Агалгін: new Date("2022-05-01"), Ношпа: new Date("2025-07-02"), Альфахолін: new Date("2024-12-21"), Аспірин: new Date("2022-08-15"), Аспаркам: new Date("2024-04-18"),};
+                    </p>
+                    <img src="./src/images/51-3.png">
+                    <img src="./src/images/51-4.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 5",
+                html:
+                `<div>
+                    <p>Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
+                    Зробіть знижку 20 % на всі фрукти у масиві Надайте ід для кожного продукту</p>
+                    <img src="./src/images/51-5.png">
+                    <img src="./src/images/51-6.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 7",
+                html:
+                `<div>
+                    <p>Напиши клас Client який створює об'єкт
+                    з властивостями login email
+                    Оголоси приватні властивості #login #email,
+                    доступ до яких зроби через геттер та сеттер login email</p>
+                    <img src="./src/images/51-7.png">
+                    <img src="./src/images/51-8.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 9",
+                html:
+                `<div>
+                    <p>Поверніть об'єкт, в якому вказано кількість тегів. Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}</p>
+                    <img src="./src/images/51-9.png">
+                    <img src="./src/images/51-10.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 10",
+                html:
+                `<div>
+                    <p>Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn) і перевіряє правильність закриття дужок () {} []
+                    Якщо рядок містить коректний код функція повертає true.
+                    В іншому випадку повертає false</p>
+                    <img src="./src/images/51-11.png">
+                    <img src="./src/images/51-12.png">
+                </div>`
+            },
+            {
+                displayName: "Висновок",
+                html:
+                `<div>
+                    <p>
+                        Виконуючи лабораторну роботу придбати практичні навички роботи з об'єктами, методвми об'єкта та колбеками з стрілочними функціями...
+                    </p>
+                </div>`
+            },
         ]
     };
 
@@ -973,22 +1042,40 @@ const getLabsData = () => {
 
     const lab8 = {
         btnId: "btn-l8",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
-                displayName: "",
-                html: ``
+                displayName: "React Курс",
+                html: 
+                `
+                <div>
+                <h2>React basics course</h2>
+                <a href="https://coursera.org/share/09b4b8dc877dc26a95d3c39a8c5873b8">Ссилка на сертифікат</a><br>
+                <img src="./src/images/react-certificate.png">
+                <img src="./src/images/react-grade.png"">
+                <img src="./src/images/react-all-grades.png">
+                </div>
+                `
             }
         ]
     };
 
     const lab9 = {
         btnId: "btn-l9",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
-                displayName: "",
-                html: ``
+                displayName: "Node - Express - MongoDB Курс",
+                html: 
+                `
+                <div>
+                <h2>Node - Express - MongoDB course</h2>
+                <a href="https://coursera.org/share/bf37c5c7e80b5c4775af0e779970ecec">Ссилка на сертифікат</a><br>
+                <img src="./src/images/node-certificate.png">
+                <img src="./src/images/node-grade.png"">
+                <img src="./src/images/node-all-graves.png">
+                </div>
+                `
             }
         ]
     };

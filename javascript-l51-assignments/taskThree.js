@@ -20,7 +20,7 @@ const medicines = [
     { name: "Аспаркам", expirationDate: new Date("2024-04-18") }
 ];
 
-const removeExpired = (array) => {
+const getValid = (array) => {
     const now = Date.now();
     return array.filter(x => now < x.expirationDate);
 }
@@ -29,6 +29,8 @@ const sortByExpireDate = (array) => {
     return array.sort((a, b) => a.expirationDate - b.expirationDate);
 }
 
-console.log(medicines);
-console.log("Sorted and removed expired medicaments:\n"
-+ JSON.stringify(sortByExpireDate(removeExpired(medicines)), null, 2));
+const getArrayWithNames = (array) => {
+    return array.map(x => x.name);
+}
+
+console.log(getArrayWithNames(sortByExpireDate(getValid(medicines))));
