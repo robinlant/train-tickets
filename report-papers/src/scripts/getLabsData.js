@@ -1102,7 +1102,7 @@ const getLabsData = () => {
             },
             {
                 displayName: "Джаваскрипт завдання з лр 5",
-                html: `<a href="../javascript-l5-assignments/index.html" target="_blank">Open in a new tab</a>`
+                html: `<a href="https://secondaccountmine.github.io/laboratory5/" target="_blank">Open in a new tab</a>`
             },
         ]
     }
