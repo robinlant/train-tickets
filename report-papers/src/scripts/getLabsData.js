@@ -1020,7 +1020,7 @@ const getLabsData = () => {
 
     const lab6 = {
         btnId: "btn-l6",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
                 displayName: "",
@@ -1103,6 +1103,10 @@ const getLabsData = () => {
             {
                 displayName: "Джаваскрипт завдання з лр 5",
                 html: `<a href="https://secondaccountmine.github.io/laboratory5/" target="_blank">Open in a new tab</a>`
+            },
+            {
+                displayName: "Джаваскрипт завдання з лр 6",
+                html: `<a href="../javascript-l6-assignments/index.html" target="_blank">Open in a new tab</a>`
             },
         ]
     }
