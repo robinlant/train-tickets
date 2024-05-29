@@ -61,21 +61,19 @@ window.addEventListener("click", (event) => {
 
 // Task Seven  =============================================
 
-// const taskSeven = document.querySelector(".task#seven");
-// const categoriesList = document.querySelector("ul.categories");
+const taskSeven = document.querySelector(".task#seven");
+const categoriesList = document.querySelector("ul.categories");
 
-// taskSeven.addEventListener("click", () => {
-//     const res = [];
+ taskSeven.addEventListener("click", () => {
+    console.log(`Number of categories: ${
+        categoriesList.querySelectorAll(".item").length
+    }`);
 
-//     categoriesList.children.foreach((x, i) => {
-//         if (x.)
-
-//         const item = {
-
-//         };
-
+    items.forEach(item => {
+        const title = item.querySelector("h2").textContent;
+        const elementsCount = item.querySelectorAll("ul li").length;
         
-
-//         res.push(item);
-//     })
-// })
+        console.log(`Category: ${title}`);
+        console.log(`Elements: ${elementsCount}`);
+    });
+ });

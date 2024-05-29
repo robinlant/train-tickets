@@ -1020,7 +1020,7 @@ const getLabsData = () => {
 
     const lab6 = {
         btnId: "btn-l6",
-        isFinished: true,
+        isFinished: false,
         components: [
             {
                 displayName: "",
@@ -1052,8 +1052,38 @@ const getLabsData = () => {
                 <h2>React basics course</h2>
                 <a href="https://coursera.org/share/09b4b8dc877dc26a95d3c39a8c5873b8">Ссилка на сертифікат</a><br>
                 <img src="./src/images/react-certificate.png">
-                <img src="./src/images/react-grade.png"">
+                </div>
+                `
+            },
+            {
+                displayName: "React Загальна Оцінка",
+                html: 
+                `
+                <div>
+                <img src="./src/images/react-grade.png">
+                </div>
+                `
+            },
+            {
+                displayName: "React Подробна Оцінка",
+                html: 
+                `
+                <div>
                 <img src="./src/images/react-all-grades.png">
+                </div>
+                `
+            },
+            {
+                displayName: "React Оцінки Усіх Тестів",
+                html: 
+                `
+                <div>
+                <div><img src="src/images/1course_page-0001.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0002.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0003.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0004.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0005.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0006.jpg" alt=""></div>
                 </div>
                 `
             }
@@ -1072,8 +1102,39 @@ const getLabsData = () => {
                 <h2>Node - Express - MongoDB course</h2>
                 <a href="https://coursera.org/share/bf37c5c7e80b5c4775af0e779970ecec">Ссилка на сертифікат</a><br>
                 <img src="./src/images/node-certificate.png">
+                </div>
+                `
+            },
+            {
+                displayName: "NodNode - Express - MongoDBe Загальна Оцінка",
+                html: 
+                `
+                <div>
                 <img src="./src/images/node-grade.png"">
+                </div>
+                `
+            },
+            {
+                displayName: "Node - Express - MongoDB Подробна Оцінка",
+                html: 
+                `
+                <div>
                 <img src="./src/images/node-all-graves.png">
+                </div>
+                `
+            },
+            {
+                displayName: "Node - Express - MongoDB Оцінки Усіх Тестів",
+                html: 
+                `
+                <div>
+                <div><img src="src/images/2course_page-0001.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0002.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0003.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0004.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0005.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0006.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0007.jpg" alt=""></div>
                 </div>
                 `
             }
