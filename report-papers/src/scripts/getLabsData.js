@@ -7,6 +7,11 @@ const escapeHtml = (string) => {
         .replace(/'/g, '&#39;');
 };
 
+const makeBrs = (string) => {
+    return string
+        .replace("//break", "<br>")
+}
+
 // For now i just hardcode data into the function,
 // because i cant access file system while code running in the browser 
 // and i dont want to setup a backend for this nor using a module bundler
@@ -635,12 +640,381 @@ const getLabsData = () => {
 
     const lab5 = {
         btnId: "btn-l5",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
-                displayName: "",
-                html: ``
-            }
+                displayName: "Тема",
+                html:
+                `<div>
+                    <h2>Тема: ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ. ВИКОРИСТАННЯ МАСИВІВ У JS-СЦЕНАРІЯХ. РЕАЛІЗАЦІЯ ПРОГРАМ ЗАСОВАМИ МОВИ JAVASCRIPT</h2>
+                </div>`
+            },
+            {
+                displayName: "Мета",
+                html:
+                `<div>
+                    <p><b>Мета:</b>придбати практичні навички роботи з масивами у js-сценаріях. Реалізація програм засовами мови JAVASCRIPT</p>
+                </div>`
+            },
+            {
+                displayName: "Завдання",
+                html:
+                `<div>
+                    <h3>Завдання</h3>
+                    <ol>
+                        <li>У звітному HTML-документі розмістити тему та постановку задачі лабораторної роботи No5.</li>
+                        <li>Розмістити результати виконання та програмний код 2 пункту у звітному HTML-документі, записавши назви файлів HTML-документів.</li>
+                        <li>Використовуючи сценарій на JavaScript, виконати завдання, яке приведене у Таблиці No1. Кожному студенту виконати своє завдання. Номер варіанта відповідає останній цифрі студента у списку групи. Наприклад, Студент 18 за списком – буде виконувати 8 варіант.</li>
+                        <li>Завдання No1 (Варіант - 3)</li>
+                        <ul>
+                            <li>1. Заданий одновимірний масив А, кількість елементів якого задана користувачем. Побудувати масив В, кожний елемент якого обчислюється за формулою: <code>bi = max * ai</code>, де max - це максимальний елемент масиву А. Надрукувати вхідний та вихідний масиви.</li>
+                            <li>2. Виконати сортування вихідного масиву за зменшенням методом вставки. Застосувати функції.</li>
+                        </ul>
+                        <li>Розмістити результат виконання та програмний код 4 пункту у звітному HTML-документі.</li>
+                        <li>Забезпечити виконання завдання згідно з варіантом (Таблиця No2), сформувати необхідні дані, вбудовані у програму, виконати тестування програми.</li>
+                        <li>Завдання No2</li>
+                        <ul>
+                            <li>Калькулятор</li>
+                            <li>Реалізувати калькулятор мовою JavaScript. Обов'язкові операції: +,-,*,/,%, корінь квадратний, x^y. Кнопки з цифрами та знаками операцій мають бути доступні у інтерфейсі вікна.</li>
+                        </ul>
+                        <li>Розмістити результат виконання та програмний код 6 пункту у звітному HTML-документі.</li>
+                        <li>У власному сайті на свій розсуд застосувати сценарії на JavaScript. Продемонструвати викладачу та відобразити у звітному HTML-документі.</li>
+                        <li>У звітному HTML-документі оформити звіт лабораторної роботи No4.</li>
+                    </ol>
+                </div>`
+            },
+            {
+                displayName: "Завдання 1 (з пункту 2)",
+                html:
+                `<div>
+                <p>Код Застосунку</p>
+                <img src="./src/images/5-1.png">
+                <img src="./src/images/5-2.png">
+                <p>Аутпут у консолі за використанням node js</p>
+                <img src="./src/images/5-3.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 2 (з пункту 6)",
+                html:
+                `<div><br>
+                Код Застосунку<br> 
+                class Calculator {<br>
+                    constructor() {<br>
+                        this._setupDefault();<br>
+                    }<br>
+                    <br>
+                    operations = {
+<br>                        None: "",
+<br>                    Plus: "+",
+<br>                    Minus: "-",
+<br>                    Multiply: "*",
+<br>                    Divide: "/",
+<br>                    Modulo: "%",
+<br>                    Square: "sqrt",
+<br>                    Raise: "^",
+<br>                }
+<br>            
+<br>                inputNumber(number) {
+    <br>                    switch(this._state) {
+        <br>                    case this._states.firstInput: {
+            <br>                    this._firstInput = this._firstInput * 10 + number;
+            <br>                return;
+            <br>            }
+            <br>            case this._states.secondInput: {
+                <br>                this._secondInput = this._secondInput * 10 + number;
+                <br>            this._tempSecondInput = this._secondInput;
+                <br>            return;
+                <br>        }
+                <br>        default: {
+                    <br>                                console.error("error at inputNumber case default is hit");
+                    <br>    }
+                    <br>}
+                    <br>}
+                    <br>
+                    <br>              clear() {
+                        <br>this._setupDefault();
+                        <br>}
+                        <br>
+                        <br>sqrt() {
+                            <br>  if (this._state != this._states.firstInput) return;
+                            <br>
+                            <br>this._lastOperationCallback = (firstInput) => Math.sqrt(firstInput);
+                            <br>
+                            <br>                        this._firstInput = this._lastOperationCallback(this._firstInput);
+                            <br>}
+                
+                            <br>getOutputInfo() {
+                        <br>    switch(this._state) {
+ <br>                           case this._states.firstInput: {
+ <br>                               return { text: this._firstInput, operation: this._operation } ;
+ <br>                           }
+  <br>                          case this._states.secondInput: {
+   <br>                             return { text: this._secondInput, operation: this._operation };
+   <br>                         }
+  <br>                          default: {
+ <br>                               console.error("error at getOutputInfo case default is hit");
+ <br>                           }
+ <br>                       }
+ <br>                   }
+ <br>               
+ <br>                   inputOperation(operation) {
+ <br>                       switch(this._state){
+ <br>                           case this._states.firstInput: {
+ <br>                               this._operation = operation;
+ <br>                               this._toggleState();
+  <br>                              return;
+ <br>                           }
+ <br>                           case this._states.secondInput:{
+ <br>                               if (this._secondInput == 0) return; // Do nothing
+ <br>               
+ <br>                               this._toggleState();
+ <br>                               this.inputOperation(operation);
+  <br>                              return;
+ <br>                           }
+ <br>                           default: {
+ <br>                               console.error("error at inputOperation case default is hit");
+ <br>                               return;
+ <br>                           }
+<br>                        }
+ <br>                   }
+ <br>               
+   <br>                 equals() {
+   <br>                     switch(this._state) {
+   <br>                         case this._states.firstInput: {
+   <br>                             if (this._lastOperationCallback == null) return;
+   <br>             
+   <br>                             this._firstInput = this._lastOperationCallback(this._firstInput);
+   <br>                             this._secondInput = 0;
+   <br>             
+   <br>                             this._state = this._states.firstInput;
+   <br>                             return;
+   <br>                         }
+   <br>                         case this._states.secondInput: {
+   <br>                             this._toggleState();
+   <br>                             return;
+   <br>                         }
+   <br>                         default: {
+     <br>                           console.error("error at equals case default is hit");
+     <br>                       }
+     <br>                   }
+     <br>               }
+     <br>           
+     <br>               delete() {
+     <br>                   switch(this._state) {
+     <br>                       case this._states.firstInput: {
+     <br>                           this._firstInput = this._firstInput.toString().slice(0, -1) || '0';
+     <br>                           this._firstInput = parseInt(this._firstInput, 10);
+     <br>                           return;
+     <br>                       }
+     <br>                       case this._states.secondInput: {
+     <br>                           this._secondInput = this._secondInput.toString().slice(0, -1) || '0';
+     <br>                           this._secondInput = parseInt(this._secondInput, 10);
+     <br>                           this._tempSecondInput = this._secondInput;
+     <br>                           return;
+     <br>                       }
+      <br>                      default: {
+     <br>                           console.error("error at delete case default is hit");
+      <br>                      }
+     <br>                   }
+     <br>               }
+      <br>              
+      <br>              
+     <br>           
+     <br>               _states = {
+      <br>                  firstInput: 1,
+      <br>                  secondInput: 2,
+       <br>             }
+       <br>         
+       <br>             _toggleState() {
+       <br>                 switch(this._state) {
+       <br>                     case this._states.firstInput: {
+       <br>                         this._state = this._states.secondInput;
+     <br>                           return;
+     <br>                       }
+     <br>                       case this._states.secondInput: {
+     <br>                           this._lastOperationCallback = this._getExecuteOperationCallback();
+     <br>                           this._firstInput = this._lastOperationCallback(this._firstInput);
+     <br>           
+     <br>                           this._secondInput = 0;
+       <br>         
+     <br>                           this._state = this._states.firstInput;
+        <br>                        return;
+        <br>                    }
+        <br>                    default: {
+        <br>                        console.error("error at _toggleState case default is hit");
+        <br>                    }
+        <br>                }
+        <br>            }
+        <br>        
+        <br>            _getExecuteOperationCallback() {
+         <br>               switch(this._operation) {
+         <br>                   case this.operations.Plus:
+         <br>                       return this._getPlusOperationCallback();
+         <br>                   case this.operations.Minus:
+       <br>                         return this._getMinusOperationCallback();
+       <br>                     case this.operations.Multiply:
+       <br>                         return this._getMultiplyOperationCallback();
+       <br>                     case this.operations.Divide:
+      <br>                          return this._getDivideOperationCallback();
+      <br>                      case this.operations.Modulo:
+      <br>                          return this._getModuloOperationCallback();
+      <br>                      case this.operations.Raise:
+      <br>                          return this._getRaiseOperationCallback();
+      <br>                      default:
+      <br>                          console.error("error at _getExecuteOperationCallback case default is hit");
+      <br>                  }
+      <br>              }
+      <br>              
+      <br>          
+      <br>              _getPlusOperationCallback() {
+      <br>                   return (input) => input + this._tempSecondInput;
+      <br>              }
+      <br>              
+      <br>              _getMinusOperationCallback() {
+      <br>                  return (input) => input - this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getMultiplyOperationCallback() {
+      <br>                  return (input) => input * this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getDivideOperationCallback() {
+      <br>                  return (input) => input / this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getModuloOperationCallback() {
+      <br>                  return (input) => input % this._tempSecondInput;
+      <br>              }
+      <br>          
+      <br>              _getRaiseOperationCallback() {
+      <br>                  return (input) => Math.pow(input, this._tempSecondInput);
+      <br>              }
+      <br>          
+      <br>              _setupDefault() {
+      <br>                  this._firstInput = 0;
+      <br>                  this._secondInput = 0;
+      <br>                  this._operation = this.operations.None;
+      <br>                  this._state = this._states.firstInput;
+      <br>                  this._lastOperationCallback = null;
+      <br>                  this._tempSecondInput = 0;
+      <br>              }
+      <br>          }
+      <br>          
+      <br>          Тещо е у браузері
+      <br>          <img src="./src/images/5-4.png">          </div>`
+            },
+            {
+                displayName: "Висновок",
+                html:
+                `<div>
+                    <h2>
+                        Виконуючи цю лаб роботу я познайомився ближче з мовою програмування джаваскрипт та використав іі на практиці написавши калькулятор та сортировку
+                    </h2>
+                </div>`
+            },
+
+        ]
+    };
+
+    const lab51 = {
+        btnId: "btn-l5-1",
+        isFinished: true,
+        components: [
+            {
+                displayName: "Тема",
+                html:
+                `<div>
+                    <h2>Тема: ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ.</h2>
+                </div>`
+            },
+            {
+                displayName: "Мета",
+                html:
+                `<div>
+                    <p><b>Мета:</b>придбати практичні навички роботи з об'єктами. Методи об'єкта.. Callback. Стрілочні функції. Стрілочні функції як колбеки.
+                    . Реалізація програм засовами мови JAVASCRIPT</p>
+                </div>`
+            },
+            {
+                displayName: "Завдання 1",
+                html:
+                `<div>
+                    <p>
+                    Напишіть наступні функції:
+                    createProduct(obj, callback) - приймає об'єкт товару без id, а також коллбек. Функція створює об'єкт товару, додаючи йому унікальний ідентифікатор у властивість id та викликає коллбек передаючи йому створений об'єкт.
+                    logProduct(product) - колббек що приймає об'єкт продукту і логуючий його в консоль logTotalPrice(product) - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
+                    </p>
+                    <img src="./src/images/51-1.png">
+                    <img src="./src/images/51-2.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 3",
+                html:
+                `<div>
+                    <p>
+                    З об'єкту medicines потрібно отримати масив в якому будуть лише назви препаратів.
+                    З масиву потрібно прибрати медикаменти , в яких строк зберігання уже пройшов . У новому масиві відсортувати медикаменти у хронологічному порядку.
+                    Результат вивести у консоль. Застосувати стрілочні функції
+                    const medicines = {
+                    Агалгін: new Date("2022-05-01"), Ношпа: new Date("2025-07-02"), Альфахолін: new Date("2024-12-21"), Аспірин: new Date("2022-08-15"), Аспаркам: new Date("2024-04-18"),};
+                    </p>
+                    <img src="./src/images/51-3.png">
+                    <img src="./src/images/51-4.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 5",
+                html:
+                `<div>
+                    <p>Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
+                    Зробіть знижку 20 % на всі фрукти у масиві Надайте ід для кожного продукту</p>
+                    <img src="./src/images/51-5.png">
+                    <img src="./src/images/51-6.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 7",
+                html:
+                `<div>
+                    <p>Напиши клас Client який створює об'єкт
+                    з властивостями login email
+                    Оголоси приватні властивості #login #email,
+                    доступ до яких зроби через геттер та сеттер login email</p>
+                    <img src="./src/images/51-7.png">
+                    <img src="./src/images/51-8.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 9",
+                html:
+                `<div>
+                    <p>Поверніть об'єкт, в якому вказано кількість тегів. Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}</p>
+                    <img src="./src/images/51-9.png">
+                    <img src="./src/images/51-10.png">
+                </div>`
+            },
+            {
+                displayName: "Завдання 10",
+                html:
+                `<div>
+                    <p>Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn) і перевіряє правильність закриття дужок () {} []
+                    Якщо рядок містить коректний код функція повертає true.
+                    В іншому випадку повертає false</p>
+                    <img src="./src/images/51-11.png">
+                    <img src="./src/images/51-12.png">
+                </div>`
+            },
+            {
+                displayName: "Висновок",
+                html:
+                `<div>
+                    <p>
+                        Виконуючи лабораторну роботу придбати практичні навички роботи з об'єктами, методвми об'єкта та колбеками з стрілочними функціями...
+                    </p>
+                </div>`
+            },
         ]
     };
 
@@ -668,22 +1042,101 @@ const getLabsData = () => {
 
     const lab8 = {
         btnId: "btn-l8",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
-                displayName: "",
-                html: ``
+                displayName: "React Курс",
+                html: 
+                `
+                <div>
+                <h2>React basics course</h2>
+                <a href="https://coursera.org/share/09b4b8dc877dc26a95d3c39a8c5873b8">Ссилка на сертифікат</a><br>
+                <img src="./src/images/react-certificate.png">
+                </div>
+                `
+            },
+            {
+                displayName: "React Загальна Оцінка",
+                html: 
+                `
+                <div>
+                <img src="./src/images/react-grade.png">
+                </div>
+                `
+            },
+            {
+                displayName: "React Подробна Оцінка",
+                html: 
+                `
+                <div>
+                <img src="./src/images/react-all-grades.png">
+                </div>
+                `
+            },
+            {
+                displayName: "React Оцінки Усіх Тестів",
+                html: 
+                `
+                <div>
+                <div><img src="src/images/1course_page-0001.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0002.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0003.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0004.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0005.jpg" alt=""></div>
+<div><img src="src/images/1course_page-0006.jpg" alt=""></div>
+                </div>
+                `
             }
         ]
     };
 
     const lab9 = {
         btnId: "btn-l9",
-        isFinished: false,
+        isFinished: true,
         components: [
             {
-                displayName: "",
-                html: ``
+                displayName: "Node - Express - MongoDB Курс",
+                html: 
+                `
+                <div>
+                <h2>Node - Express - MongoDB course</h2>
+                <a href="https://coursera.org/share/bf37c5c7e80b5c4775af0e779970ecec">Ссилка на сертифікат</a><br>
+                <img src="./src/images/node-certificate.png">
+                </div>
+                `
+            },
+            {
+                displayName: "NodNode - Express - MongoDBe Загальна Оцінка",
+                html: 
+                `
+                <div>
+                <img src="./src/images/node-grade.png"">
+                </div>
+                `
+            },
+            {
+                displayName: "Node - Express - MongoDB Подробна Оцінка",
+                html: 
+                `
+                <div>
+                <img src="./src/images/node-all-graves.png">
+                </div>
+                `
+            },
+            {
+                displayName: "Node - Express - MongoDB Оцінки Усіх Тестів",
+                html: 
+                `
+                <div>
+                <div><img src="src/images/2course_page-0001.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0002.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0003.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0004.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0005.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0006.jpg" alt=""></div>
+                <div><img src="src/images/2course_page-0007.jpg" alt=""></div>
+                </div>
+                `
             }
         ]
     };
@@ -693,24 +1146,32 @@ const getLabsData = () => {
         isFinished: true,
         components: [
             {
-                displayName: "Resume",
-                html: `<a href="../resume/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Резюме",
+                html: `<a href="https://secondaccountmine.github.io/resume/" target="_blank">Open in a new tab</a>`
             },
             {
-                displayName: "WebApp",
-                html: `<a href="../webapp/public/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Сайт",
+                html: `<a href="https://secondaccountmine.github.io/webapp/" target="_blank">Open in a new tab</a>`
             },
             {
-                displayName: "Flexbox Task 1",
-                html: `<a href="../flexbox-simple/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Флексбокс завдання один",
+                html: `<a href="https://secondaccountmine.github.io/flexbox-simple/" target="_blank">Open in a new tab</a>`
             },
             {
-                displayName: "Flexbox Task 2",
-                html: `<a href="../flexbox-harder/index.html" target="_blank">Open in a new tab</a>`
+                displayName: "Флексбокс завдання два",
+                html: `<a href="https://secondaccountmine.github.io/flexbox-harder/" target="_blank">Open in a new tab</a>`
+            },
+            {
+                displayName: "Джаваскрипт завдання з лр 5",
+                html: `<a href="https://secondaccountmine.github.io/laboratory5/" target="_blank">Open in a new tab</a>`
+            },
+            {
+                displayName: "Джаваскрипт завдання з лр 6",
+                html: `<a href="../javascript-l6-assignments/index.html" target="_blank">Open in a new tab</a>`
             },
         ]
     }
 
     
-    return labs = [livePages, lab1, lab2, lab3, lab4, lab5, lab6, lab7, lab8, lab9];
+    return labs = [livePages, lab1, lab2, lab3, lab4, lab5, lab51, lab6, lab7, lab8, lab9];
 }
