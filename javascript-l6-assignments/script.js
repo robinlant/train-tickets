@@ -92,13 +92,19 @@ form.addEventListener('submit', (event) => {
         return;
     }
 
-    const data = {
-        email: email,
-        password: password
-    };
+    const data = {};
+    data[form.elements.email.name] = email;
+    data[form.elements.password.name] = password;
 
-    console.log()
-    console.log("Форма з завдання 8: " + data);
+    console.log(
+        "Форма з завдання 8\n" +
+        form.elements.email.name + " -> "
+        + data[form.elements.email.name]
+        + "\n" + 
+        form.elements.password.name + " -> "
+        + data[form.elements.password.name]
+    );
+    console.log(data);
 
     form.reset();
 });
@@ -144,6 +150,7 @@ destroyButton.addEventListener('click',
 
 function createBoxes(amount) {
     boxesContainer.innerHTML = '';
+    input.value = "";
 
   const elements = [];
 
